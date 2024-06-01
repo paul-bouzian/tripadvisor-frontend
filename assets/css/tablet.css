@@ -1,0 +1,10 @@
+.vols,
+.croisieres {
+  display: flex !important;
+}
+
+.nav-main {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}

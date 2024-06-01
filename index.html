@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/fonts.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/28c299307c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <title>TripAdvisor</title>
+  </head>
+  <body>
+    <div class="modal">
+      <div class="modal-container">
+        <div class="cross">
+          <i id="close" class="fa-solid fa-xmark"></i>
+        </div>
+        <h2 class="form-name">Formulaire de contact</h2>
+        <form id="contactForm">
+          <input
+            type="text"
+            name="firstname"
+            id="firstname"
+            value=""
+            placeholder="Prénom"
+          />
+          <input
+            type="text"
+            name="lastname"
+            id="lastname"
+            value=""
+            placeholder="Nom"
+          />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value=""
+            placeholder="Email"
+          />
+          <textarea
+            name="message"
+            id="message"
+            cols="30"
+            rows="6"
+            placeholder="Écrivez ici votre message..."
+          ></textarea>
+          <button type="submit">Envoyer le formulaire</button>
+        </form>
+      </div>
+    </div>
+    <header>
+      <div class="header">
+        <i class="fa-solid fa-bars" style="display: none"></i>
+        <img class="logo" src="./assets/img/logo.svg" alt="TripAdvisor" />
+        <nav>
+          <ul class="nav-header">
+            <li>
+              <i class="fa-solid fa-pencil"></i>
+              <span>Avis</span>
+            </li>
+            <li><i class="fa-regular fa-heart"></i><span>Voyages</span></li>
+            <li><i class="fa-regular fa-bell"></i><span>Alertes</span></li>
+            <li><button id="connect">Connectez-vous</button></li>
+            <li style="display: none">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </li>
+            <li>
+              <i class="fa-solid fa-cart-shopping"></i><span>Panier</span>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div>
+        <h1 class="explore">
+          <span>Explorez</span> <span style="color: black">Paris</span>
+        </h1>
+        <p class="infos">
+          Les revenus influencent le choix des expériences présentées sur cette
+          page : <a href="#" style="color: #333333">en savoir plus</a>.
+        </p>
+      </div>
+
+      <nav style="margin-top: 30px">
+        <ul class="nav-main">
+          <li><span>Hôtels</span><i class="fa-solid fa-bed"></i></li>
+          <li>
+            <span>Location de vacances</span
+            ><i class="fa-solid fa-house-flood-water"></i>
+          </li>
+          <li><span>Activités</span><i class="fa-solid fa-ticket"></i></li>
+          <li><span>Restaurants</span><i class="fa-solid fa-utensils"></i></li>
+          <li>
+            <span>Forums de voyage</span><i class="fa-regular fa-comments"></i>
+          </li>
+          <li class="vols">
+            <span>Vols</span><i class="fa-solid fa-plane"></i>
+          </li>
+          <li class="croisieres">
+            <span>Croisières</span><i class="fa-solid fa-ship"></i>
+          </li>
+          <li><span>Plus</span><i class="fa-solid fa-ellipsis"></i></li>
+        </ul>
+      </nav>
+
+      <div class="photos">
+        <div>
+          <img src="./assets/img/view1.jpeg" alt="" />
+          <div class="all-photos">
+            <i class="fa-solid fa-image"></i>
+            <span>Toutes les photos</span>
+          </div>
+        </div>
+
+        <div class="col-photos">
+          <div><img src="./assets/img/view2.jpeg" alt="" /></div>
+          <div><img src="./assets/img/view3.jpeg" alt="" /></div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <ul class="nav-bar">
+          <li>Europe</li>
+          <li><i class="fa-solid fa-chevron-right"></i></li>
+          <li>France</li>
+          <li><i class="fa-solid fa-chevron-right"></i></li>
+          <li>Île-de-France</li>
+          <li><i class="fa-solid fa-chevron-right"></i></li>
+          <li>Paris</li>
+          <li style="padding-bottom: 5px">
+            <i class="fa-solid fa-sort-down"></i>
+          </li>
+        </ul>
+        <p>Visiter Paris</p>
+      </nav>
+
+      <section class="city-light">
+        <div style="flex: 1.3">
+          <h2>La Ville Lumière éblouit en tous points</h2>
+          <p class="city-desc">
+            Aucun autre endroit au monde ne fait autant rêver que Paris. La
+            ville séduit par son art, son architecture, sa culture et sa
+            cuisine, mais il y a aussi des merveilles plus discrètes qui
+            n’attendent qu’à être explorées : les ruelles pavées pittoresques,
+            les pâtisseries au coin de la rue et les petits bistrots douillets
+            qui vous invitent à boire un verre de beaujolais. Préparez-vous à
+            vous approprier Paris.
+          </p>
+        </div>
+        <div class="full-planify">
+          <div class="planify">
+            <h3>Paris : commencez à organiser !</h3>
+            <p>
+              Créez un voyage pour enregistrer et organiser toutes vos idées et
+              les visualiser sur une carte.
+            </p>
+            <button>Créez un voyage</button>
+          </div>
+          <div>
+            <img class="travel-img" src="./assets/img/travel.png" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <section class="unmisseable">
+        <h2>Paris : les immanquables</h2>
+        <div>
+          <div class="unmisseable-titles">
+            <h3>Se divertir</h3>
+            <p>
+              Des lieux à voir, des rues à explorer et des expériences
+              emblématiques à Paris.
+            </p>
+            <p>Tout afficher</p>
+          </div>
+          <div class="carousel">
+            <div>
+              <div>
+                <img src="./assets/img/carousel_eiffel.jpg" alt="" />
+                <div class="heart-circle">
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+                <img
+                  src="./assets/img/tripadvisor_badge.svg"
+                  alt=""
+                  class="badge"
+                />
+              </div>
+              <h4>Tour Eiffel</h4>
+              <div class="review">
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                <span>139 901</span>
+              </div>
+              <p>
+                Tours et plateformes d'observation, Monuments & Points d'intérêt
+              </p>
+            </div>
+
+            <div>
+              <div>
+                <img src="./assets/img/carousel_triomphe.jpg" alt="" />
+                <div class="heart-circle">
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+                <img
+                  src="./assets/img/tripadvisor_badge.svg"
+                  alt=""
+                  class="badge"
+                />
+              </div>
+
+              <h4>Arc de Triomphe</h4>
+              <div class="review">
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                <span>56 987</span>
+              </div>
+              <p>Bâtiments architecturaux, Sites historiques</p>
+            </div>
+
+            <div>
+              <div>
+                <img src="./assets/img/carousel_louvre.jpg" alt="" />
+                <div class="heart-circle">
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+                <img
+                  src="./assets/img/tripadvisor_badge.svg"
+                  alt=""
+                  class="badge"
+                />
+              </div>
+
+              <h4>Musée du Louvre</h4>
+              <div class="review">
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                <span>100 845</span>
+              </div>
+              <p>Bâtiments architecturaux, Musées d'art</p>
+            </div>
+
+            <div>
+              <div>
+                <img src="./assets/img/carousel_rodin.jpg" alt="" />
+                <div class="heart-circle">
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+                <img
+                  src="./assets/img/tripadvisor_badge.svg"
+                  alt=""
+                  class="badge"
+                />
+              </div>
+
+              <h4>Musée Rodin</h4>
+              <div class="review">
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                <span>187 981</span>
+              </div>
+              <p>Musées spécialisés</p>
+            </div>
+
+            <div>
+              <div>
+                <img src="./assets/img/carousel_notredame.jpg" alt="" />
+                <div class="heart-circle">
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+                <img
+                  src="./assets/img/tripadvisor_badge.svg"
+                  alt=""
+                  class="badge"
+                />
+              </div>
+
+              <h4>Cathédrale Notre-Dame de Paris</h4>
+              <div class="review">
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                <span>139 901</span>
+              </div>
+              <p>Bâtiments architecturaux, Sites historiques</p>
+            </div>
+
+            <div>
+              <div>
+                <img src="./assets/img/carousel_shakespear.jpg" alt="" />
+                <div class="heart-circle">
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+                <img
+                  src="./assets/img/tripadvisor_badge.svg"
+                  alt=""
+                  class="badge"
+                />
+              </div>
+
+              <h4>Librairie Shakespear and Company</h4>
+              <div class="review">
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                <span>140 321</span>
+              </div>
+              <p>Bibliothèques, Grands magasins</p>
+            </div>
+
+            <div>
+              <div>
+                <img src="./assets/img/carousel_orsay.jpg" alt="" />
+                <div class="heart-circle">
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+                <img
+                  src="./assets/img/tripadvisor_badge.svg"
+                  alt=""
+                  class="badge"
+                />
+              </div>
+
+              <h4>Musée d'Orsay</h4>
+              <div class="review">
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                <span>67 761</span>
+              </div>
+              <p>Musées d'art</p>
+            </div>
+
+            <div>
+              <div>
+                <img src="./assets/img/carousel_pupuce.jpg" alt="" />
+                <div class="heart-circle">
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+                <img
+                  src="./assets/img/tripadvisor_badge.svg"
+                  alt=""
+                  class="badge"
+                />
+              </div>
+
+              <h4>Marché aux Puces de Saint-Ouen</h4>
+              <div class="review">
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                <span>103 495</span>
+              </div>
+              <p>
+                Antiquaires, Marchés aux puces & Marchés de rue<br />Saint-Ouen,
+                <br />France À 5,4 kilomètres de Paris
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="unmisseable-titles">
+            <h3>Se restaurer</h3>
+            <p>Bistrots et bars typiques, et plus encore à Paris.</p>
+            <p>Tout afficher</p>
+          </div>
+          <div class="carousel">
+            <div>
+              <div>
+                <img src="./assets/img/Repas_6.jpg" alt="" />
+                <div class="heart-circle">
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+                <img
+                  src="./assets/img/tripadvisor_badge.svg"
+                  alt=""
+                  class="badge"
+                />
+              </div>
+
+              <h4>Frenchie</h4>
+              <div class="review">
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                <span>1 297</span>
+              </div>
+              <p>€€€€ · Française, Végétariens bienvenus, Plats sans gluten</p>
+            </div>
+
+            <div>
+              <div>
+                <img src="./assets/img/Repas_5.jpg" alt="" />
+                <div class="heart-circle">
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+                <img
+                  src="./assets/img/tripadvisor_badge.svg"
+                  alt=""
+                  class="badge"
+                />
+              </div>
+
+              <h4>114 Faubourg</h4>
+              <div class="review">
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                <span>1 754</span>
+              </div>
+              <p>€€ · Française, Européenne, Végétariens bienvenus</p>
+            </div>
+
+            <div>
+              <div>
+                <img src="./assets/img/Repas_4.jpg" alt="" />
+                <div class="heart-circle">
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+                <img
+                  src="./assets/img/tripadvisor_badge.svg"
+                  alt=""
+                  class="badge"
+                />
+              </div>
+
+              <h4>Verjus</h4>
+              <div class="review">
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                <span>545</span>
+              </div>
+              <p>€€€ · Française, Européenne, Moderne</p>
+            </div>
+
+            <div>
+              <div>
+                <img src="./assets/img/Repas_3.jpg" alt="" />
+                <div class="heart-circle">
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+                <img
+                  src="./assets/img/tripadvisor_badge.svg"
+                  alt=""
+                  class="badge"
+                />
+              </div>
+
+              <h4>ASPIC</h4>
+              <div class="review">
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                <span>2 981</span>
+              </div>
+              <p>€€€€ · Française, Européenne, Saine</p>
+            </div>
+
+            <div>
+              <div>
+                <img src="./assets/img/Repas_2.jpg" alt="" />
+                <div class="heart-circle">
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+                <img
+                  src="./assets/img/tripadvisor_badge.svg"
+                  alt=""
+                  class="badge"
+                />
+              </div>
+
+              <h4>Bistrot chic</h4>
+              <div class="review">
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                <span>1 345</span>
+              </div>
+              <p>€€€ · Française, Européenne, Saine, Moderne</p>
+            </div>
+
+            <div>
+              <div>
+                <img src="./assets/img/Repas_1.jpg" alt="" />
+                <div class="heart-circle">
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+                <img
+                  src="./assets/img/tripadvisor_badge.svg"
+                  alt=""
+                  class="badge"
+                />
+              </div>
+
+              <h4>Vive les huîtres</h4>
+              <div class="review">
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                <span>4 340</span>
+              </div>
+              <p>€€€€ · Française, Moderne, Bar à vins</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin-bottom: 150px">
+        <h2>Guides de voyageurs</h2>
+        <div class="guides-container">
+          <div class="guides-component">
+            <div>
+              <img src="./assets/img/Visit1.jpg" alt="" />
+            </div>
+            <h4>Best summer things to do in Paris | Eatwith</h4>
+            <p>36 articles</p>
+            <div class="author">
+              <img src="./assets/img/fork-icon.jpg" alt="" />
+              <span>Par</span> <span>Eatwith</span>
+            </div>
+          </div>
+
+          <div class="guides-component">
+            <div>
+              <img src="./assets/img/Visit2.jpg" alt="" />
+            </div>
+            <h4>Les 10 monuments et musées de Paris à faire</h4>
+            <p>10 articles</p>
+            <div class="author">
+              <img src="./assets/img/topito-icon.jpg" alt="" />
+              <span>Par</span> <span>Topito</span>
+            </div>
+          </div>
+
+          <div class="guides-component">
+            <div>
+              <img src="./assets/img/Visit3.jpg" alt="" />
+            </div>
+            <h4>Top 10 des choses à faire ou à voir dans le 14ème</h4>
+            <p>10 articles</p>
+            <div class="author">
+              <img src="./assets/img/topito-icon.jpg" alt="" />
+              <span>Par</span> <span>Topito</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <img src="./assets/img/TripAdvisor_footer.svg" alt="" />
+      <span>Made at</span>
+      <span>Le Reacteur</span>
+      <span>by</span>
+      <span>Marty McFly</span>
+    </footer>
+  </body>
+</html>

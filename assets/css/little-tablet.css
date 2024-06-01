@@ -1,0 +1,46 @@
+.city-light {
+  flex-direction: column;
+  gap: 20px;
+}
+
+.full-planify {
+  display: flex;
+  flex-direction: row;
+}
+
+.planify {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.travel-img {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.nav-header span {
+  display: none;
+}
+
+.header,
+main {
+  max-width: 100%;
+  margin: 0 20px;
+}
+
+main {
+  margin-top: 90px;
+}
+
+.guides-component > div:first-child > img {
+  height: 290px;
+}
+
+.guides-component {
+  width: 380px;
+  flex-shrink: 0;
+}

@@ -1,0 +1,7 @@
+@import "reset.css";
+@import "fonts.css";
+@import "main.css";
+@import "modal.css";
+@import "tablet.css" screen and (max-width: 1184px);
+@import "little-tablet.css" screen and (max-width: 1024px);
+@import "phone.css" screen and (max-width: 768px);

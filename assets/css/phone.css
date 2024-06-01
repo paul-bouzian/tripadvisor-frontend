@@ -1,0 +1,69 @@
+.nav-header li:not(:last-child) {
+  display: none !important;
+}
+
+.nav-header li:nth-child(5) {
+  display: block !important;
+}
+
+.header > i {
+  display: inline !important;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+.full-planify {
+  display: flex;
+  flex-direction: column;
+}
+
+.planify {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 0px;
+}
+
+.travel-img {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 20px;
+  height: 190px;
+}
+
+.col-photos {
+  display: none !important;
+}
+
+.nav-main {
+  overflow: hidden;
+  overflow-x: scroll;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.unmisseable > div {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.carousel > div {
+  width: 70%;
+}
+
+.carousel > div > div > img {
+  height: 270px;
+}
+
+.guides-component > div:first-child > img {
+  height: 355px;
+}
+
+.guides-component {
+  width: 70%;
+}

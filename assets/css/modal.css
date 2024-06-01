@@ -1,0 +1,101 @@
+.modal {
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+}
+
+.modal-container {
+  height: 580px;
+  width: 490px;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cross {
+  width: calc(100% - 30px);
+  display: flex;
+  justify-content: flex-end;
+  color: #8a8a8a;
+  font-size: 28px;
+  margin: 15px;
+}
+
+.cross i:hover {
+  cursor: pointer;
+  color: black;
+}
+
+.form-name {
+  font-size: 24px;
+  font-family: TS-Med, sans-serif;
+  font-weight: 700;
+}
+
+form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+form input {
+  width: 90%;
+  height: 30px;
+  border: 2px solid black;
+  margin: 10px;
+  padding: 10px;
+}
+
+form textarea {
+  width: 90%;
+  height: 80px;
+  border: 2px solid black;
+  margin: 10px;
+  padding: 10px;
+  padding-top: 20px;
+}
+
+form button {
+  width: 70%;
+  height: 38px;
+  background-color: #04a96c;
+  color: white;
+  font-size: 16px;
+  font-family: TS-Reg, sans-serif;
+  font-weight: 100;
+  border: none;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+form button:hover {
+  background-color: #35e1a1;
+  cursor: pointer;
+}
+
+::placeholder {
+  font-family: "TS-Reg", sans-serif;
+  font-size: 15px;
+  color: #757575;
+  font-weight: 700;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
