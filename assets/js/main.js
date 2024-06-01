@@ -26,5 +26,6 @@ $.addEventListener("DOMContentLoaded", () => {
       data
     );
     console.log(response);
+    $.querySelector(".modal").classList.toggle("show");
   });
 });
